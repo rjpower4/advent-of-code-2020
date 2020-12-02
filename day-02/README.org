@@ -1,0 +1,9 @@
+#+TITLE: Day 02
+#+AUTHOR: Rolfe Power
+
+* Part 1
+** Problem Statement
+* Part 2
+** Problem Statement
+
+

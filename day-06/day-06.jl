@@ -1,43 +1,17 @@
 module Day6
 
-using StaticArrays
 const INPUT_FILE="input.txt"
 
-"""
-    char_to_index(c)
-
-Turn the character to an index from 1 to 26
-"""
-char_to_index(c) = Int(c) - Int('a') + 1  
-
-"""
-    get_set_count(lines)
-
-Tally the repetitions of characters in the lines (as 26 element array)
-"""
-function get_set_count(lines)
-    s = MVector{26, Int}(undef)
-    s .= 0
-    for l in lines
-        for c in l
-            s[char_to_index(c)] += 1
-        end
-    end
-    s
-end
-
 function solve(ifile=INPUT_FILE)
-    data = read(ifile) |> String |> x -> split(x, "\n\n")
-    any_count = 0
-    all_count = 0
-    for group in data
-        split_group = split(group, "\n")
-        n = length(split_group)
-        sc = get_set_count(split_group)
-        any_count += count(x -> x != 0, sc)
-        all_count += count(x -> x == n, sc)
+    families = read(ifile, String) |> x-> split(x, "\n\n")
+    part_1 = zeros(Int, length(families))
+    part_2 = zeros(Int, length(families))
+    for (i, f) in enumerate(families)
+        k = split(f, '\n')
+        part_1[i] = length(mapreduce(Set, union, k))
+        part_2[i] = length(mapreduce(Set, intersect, k))
     end
-    (p1=any_count, p2=all_count)
+    (p1=sum(part_1), p2=sum(part_2))
 end
 
 end

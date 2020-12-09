@@ -1,8 +1,5 @@
 module Day3
 
-const TEST_INPUT_FILE = "test_input.txt"
-const INPUT_FILE = "input.txt"
-
 const EMPTY_SPACE = 0
 const TREE        = 1
 

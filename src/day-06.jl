@@ -1,7 +1,5 @@
 module Day6
 
-const INPUT_FILE="input.txt"
-
 function solve(ifile=INPUT_FILE)
     families = read(ifile, String) |> x-> split(x, "\n\n")
     part_1 = 0

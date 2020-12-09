@@ -1,7 +1,5 @@
 module Day7
 
-const INPUT_FILE="input.txt"
-
 struct BagRule
     base_color::String
     fill_colors::Vector{String}

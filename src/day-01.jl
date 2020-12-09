@@ -1,12 +1,5 @@
 module Day1
 
-const PART_1_TEST_INPUT_FILE = "test_input.txt"
-const PART_1_INPUT_FILE = "input.txt"
-
-const PART_2_TEST_INPUT_FILE = "test_input.txt"
-const PART_2_INPUT_FILE = "input.txt"
-
-
 """
     solve_part1([ifile])
 
@@ -16,7 +9,7 @@ This solution is accomplished by storing the value of 2020-k for every k visited
 Therefore, a simple lookup on a new number to see whether that number is in the dictionary
 finds the solution. This gives the solution in O(n) time with O(n) space.
 """
-function solve_part1(ifile=PART_1_INPUT_FILE)
+function solve_part1(ifile)
     d = Dict{Int, Int}()
     for num_s in eachline(abspath(ifile))
         i = parse(Int, num_s)
@@ -39,7 +32,7 @@ This is the solution to part 2.
 It is solved by leveraging the double pointer algorithm for a sorted list as we walk up
 the list. Therefore, it is O(n^2) for time and O(1) for space.
 """
-function solve_part2(ifile=PART_2_INPUT_FILE)
+function solve_part2(ifile)
     nums = map(eachline(abspath(ifile))) do num_s
         i = parse(Int, num_s)
     end

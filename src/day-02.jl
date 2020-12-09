@@ -3,9 +3,6 @@ module Day2
 export PART_1_INPUT_FILE
 export aoc_solve
 
-const PART_1_TEST_INPUT_FILE = "test_input.txt"
-const PART_1_INPUT_FILE = "input.txt"
-
 """
     LineData
 
@@ -82,11 +79,11 @@ function isvalid(pp::PositionPolicy, ld::LineData)
 end
 
 """
-    aoc_solve([ifile=PART_1_INPUT_FILE])
+    solve(ifile)
 
 Solve day 2.
 """
-function aoc_solve(ifile=PART_1_INPUT_FILE)
+function solve(ifile)
     # Keep track of valid count
     cp_count = 0
     pp_count = 0

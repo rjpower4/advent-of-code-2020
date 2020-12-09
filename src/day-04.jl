@@ -2,8 +2,6 @@ module Day4
 
 # 213, 147
 
-const INPUT_FILE = "input.txt"
-
 const REQUIRED_ITEMS = (
     :byr,
     :iyr,

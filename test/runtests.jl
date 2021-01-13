@@ -36,3 +36,9 @@ end
     include(srcdir("day-07.jl"))
     @test Day7.solve(datadir("test", "day-07-a.txt")) == (p1=4, p2=32)
 end
+
+@testset "Day 8" begin
+    include(srcdir("day-08.jl"))
+    @test Day8.solve(datadir("test", "day-08.txt")) == 5
+    @test Day8.solve(datadir("input", "day-08.txt")) == 1501
+end
